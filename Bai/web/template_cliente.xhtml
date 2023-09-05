@@ -7,10 +7,30 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><ui:insert name="title">Default Title</ui:insert></title>
-        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputStylesheet library="css" name="clientes.css"/>
     </h:head>
 
     <h:body>
+                     <header>
+                  <img src="img/Logo1.png" alt="" class="imagen-logo">
+ 
+    <div class="icon-menu">
+        <a href="#" class="enlace-con-icono">
+            <i class="fa-solid fa-bars"></i> <!-- Icono de barras de Font Awesome -->
+        </a>
+
+         <div class="icon-user">
+        <a href="#" class="enlace-con-user">
+            <i class="fa-solid fa-user"></i>
+        </a>
+    </div>
+
+    <div class="citas">CITAS</div>
+    <div class="cuadrado"></div>
+    <div class="historial">HISTORIAL</div>
+
+ 
+             </header>
         <h1>
 
             <ui:insert name="title">Default Title</ui:insert>
@@ -18,6 +38,10 @@
         <p>
             <ui:insert name="body">Default Body</ui:insert>
         </p>
+        
+         <footer pie="">
+            Derechos Reservados a Olga Look - Desde 2007
+        </footer>
     </h:body>
 
 </html>
