@@ -16,9 +16,9 @@
             <h:form>
                 <h:panelGrid columns="2">
                     
-                    <h:outputLabel value="#{bundle.CreateProductosLabel_nombre}" for="nombre" />
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_nombre}" for="nombre" styleClass="accioncrear" />
                     <h:inputText id="nombre" value="#{productosController.selected.nombre}" title="#{bundle.CreateProductosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{bundle.CreateProductosLabel_marca}" for="marca" />
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_marca}" for="marca" styleClass="accioncrear" />
                     <h:selectOneMenu id="marca" value="#{productosController.selected.marca}" title="#{bundle.CreateProductosTitle_marca}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_marca}">
                     <f:selectItem itemLabel="Selecciona una Marca..." itemValue="" />
                     <f:selectItem itemValue="BaByliss" itemLabel="BaByliss" />
@@ -41,14 +41,13 @@
                     <f:selectItem itemValue="GlamGlow" itemLabel="GlamGlow" />
                     </h:selectOneMenu>
                     
-                    <h:outputLabel value="#{bundle.CreateProductosLabel_precio}" for="precio" />
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_precio}" for="precio" styleClass="accioncrear" />
                     <h:inputText id="precio" value="#{productosController.selected.precio}" title="#{bundle.CreateProductosTitle_precio}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_precio}">
-                    <f:validateRegex pattern="^\d+(\.\d+)?$" />
-                    <input type="number"/>
+                    
                     </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateProductosLabel_descripcion}" for="descripcion" />
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_descripcion}" for="descripcion" styleClass="accioncrear" />
                     <h:inputText id="descripcion" value="#{productosController.selected.descripcion}" title="#{bundle.CreateProductosTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_descripcion}"/>
-                    <h:outputLabel value="#{bundle.CreateProductosLabel_estado}" for="estado" />
+                    <h:outputLabel value="#{bundle.CreateProductosLabel_estado}" for="estado" styleClass="accioncrear" />
                     <h:selectOneMenu id="estado" value="#{productosController.selected.estado}" title="#{bundle.CreateProductosTitle_estado}" required="true" requiredMessage="#{bundle.CreateProductosRequiredMessage_estado}">
                      <f:selectItem itemLabel="Selecciona un Estado..." itemValue="" />
                         <f:selectItem itemValue="1" itemLabel="1" />
@@ -60,13 +59,13 @@
 
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{productosController.create}" value="#{bundle.CreateProductosSaveLink}" />
+                <h:commandLink action="#{productosController.create}" value="#{bundle.CreateProductosSaveLink}" styleClass="accionbajo" />
                 <br />
                 <br />
-                <h:commandLink action="#{productosController.prepareList}" value="#{bundle.CreateProductosShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{productosController.prepareList}" value="#{bundle.CreateProductosShowAllLink}" immediate="true" styleClass="accionbajo"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProductosIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.CreateProductosIndexLink}" styleClass="accionbajo" />
             </h:form>
         </ui:define>
     </ui:composition>

@@ -31,13 +31,13 @@
 
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{usersController.create}" value="#{bundle.CreateUsersSaveLink}" />
+                <h:commandLink action="#{usersController.create}" value="#{bundle.CreateUsersSaveLink}" styleClass="accionbajo" />
                 <br />
                 <br />
-                <h:commandLink action="#{usersController.prepareList}" value="#{bundle.CreateUsersShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{usersController.prepareList}" value="#{bundle.CreateUsersShowAllLink}" immediate="true" styleClass="accionbajo" />
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateUsersIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.CreateUsersIndexLink}" styleClass="accionbajo" />
             </h:form>
         </ui:define>
     </ui:composition>

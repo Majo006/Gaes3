@@ -21,24 +21,24 @@
                     <h:outputLabel value="#{bundle.CreateCuentasLabel_email}" for="email" styleClass="accioncrear" />
                     <h:inputText id="email" value="#{cuentasController.selected.email}" title="#{bundle.CreateCuentasTitle_email}" required="true" requiredMessage="#{bundle.CreateCuentasRequiredMessage_email}"/>
                     <h:outputLabel value="#{bundle.CreateCuentasLabel_permiso}" for="permiso" styleClass="accioncrear"/>
-                    <h:inputText id="permiso" value="#{cuentasController.selected.permiso}" title="#{bundle.CreateCuentasTitle_permiso}" required="true" requiredMessage="#{bundle.CreateCuentasRequiredMessage_permiso}"/>
-                    <h:outputLabel value="#{bundle.CreateCuentasLabel_createdAt}" for="createdAt" />
-                    <h:inputText id="createdAt" value="#{cuentasController.selected.createdAt}" title="#{bundle.CreateCuentasTitle_createdAt}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateCuentasLabel_updatedAt}" for="updatedAt" />
-                    <h:inputText id="updatedAt" value="#{cuentasController.selected.updatedAt}" title="#{bundle.CreateCuentasTitle_updatedAt}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:inputText>
+                    <h:selectOneMenu id="permiso" value="#{cuentasController.selected.permiso}" title="#{bundle.CreateCuentasTitle_permiso}" required="true" requiredMessage="#{bundle.CreateCuentasRequiredMessage_permiso}">
+                     <f:selectItem itemLabel="Selecciona un Permiso..." itemValue="" />
+                     <f:selectItem itemLabel="2" itemValue="2" />
+                     <f:selectItem itemLabel="3" itemValue="3" />
+                     </h:selectOneMenu>
+                    <h3>Permisos:</h3>
+                    <p>2:Empleado</p>
+                    <p>3:Cliente</p>
+    
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{cuentasController.create}" value="#{bundle.CreateCuentasSaveLink}" />
+                <h:commandLink action="#{cuentasController.create}" value="#{bundle.CreateCuentasSaveLink}" styleClass="accionbajo" />
                 <br />
                 <br />
-                <h:commandLink action="#{cuentasController.prepareList}" value="#{bundle.CreateCuentasShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{cuentasController.prepareList}" value="#{bundle.CreateCuentasShowAllLink}" immediate="true" styleClass="accionbajo" />
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateCuentasIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.CreateCuentasIndexLink}" styleClass="accionbajo" />
             </h:form>
         </ui:define>
     </ui:composition>

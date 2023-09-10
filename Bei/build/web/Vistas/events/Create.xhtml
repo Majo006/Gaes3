@@ -45,29 +45,62 @@
                     
                     <h:outputLabel value="#{bundle.CreateEventsLabel_startDate}" for="startDate" styleClass="accioncrear" />
                     <h:selectOneMenu id="startDate" value="#{eventsController.selected.startDate}" title="#{bundle.CreateEventsTitle_startDate}" required="true" requiredMessage="#{bundle.CreateEventsRequiredMessage_startDate}">
-                        
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         <f:selectItem itemLabel="Selecciona una fecha y hora..." itemValue="" />
-                        <f:selectItem itemLabel="23 de septiembre, 12:00 PM" itemValue="" />
-                        <f:selectItem itemLabel="24 de septiembre, 12:00 PM" itemValue="" />
-                        <f:selectItem itemLabel="25 de septiembre, 12:00 PM" itemValue="" />
+                         
+                         <f:selectItem itemLabel="09/23/2023 13:00:00" itemValue="09/23/2023 13:00:00" />
+                         <f:selectItem itemLabel="09/23/2023 14:00:00" itemValue="09/23/2023 14:00:00" />
+                         <f:selectItem itemLabel="09/23/2023 15:00:00" itemValue="09/23/2023 15:00:00" />
+                         <f:selectItem itemLabel="09/23/2023 16:00:00" itemValue="09/23/2023 16:00:00" />
+                         <f:selectItem itemLabel="09/23/2023 17:00:00" itemValue="09/23/2023 17:00:00" />
+                         <f:selectItem itemLabel="09/24/2023 12:00:00" itemValue="09/24/2023 12:00:00" />
+                         <f:selectItem itemLabel="09/24/2023 13:00:00" itemValue="09/24/2023 13:00:00" />
+                         <f:selectItem itemLabel="09/24/2023 14:00:00" itemValue="09/24/2023 14:00:00" />
+                         <f:selectItem itemLabel="09/24/2023 15:00:00" itemValue="09/24/2023 15:00:00" />
+                         <f:selectItem itemLabel="09/24/2023 16:00:00" itemValue="09/24/2023 16:00:00" />
+                         <f:selectItem itemLabel="09/24/2023 17:00:00" itemValue="09/24/2023 17:00:00" />
+                         <f:selectItem itemLabel="09/25/2023 12:00:00" itemValue="09/25/2023 12:00:00" />
+                         <f:selectItem itemLabel="09/25/2023 13:00:00" itemValue="09/25/2023 13:00:00" />
+                         <f:selectItem itemLabel="09/25/2023 14:00:00" itemValue="09/25/2023 14:00:00" />
+                         <f:selectItem itemLabel="09/25/2023 15:00:00" itemValue="09/25/2023 15:00:00" />
+                         <f:selectItem itemLabel="09/25/2023 16:00:00" itemValue="09/25/2023 16:00:00" />
+                         <f:selectItem itemLabel="09/25/2023 17:00:00" itemValue="09/25/2023 17:00:00" />
+
                        
                         </h:selectOneMenu>
-         
-                    <h:outputLabel value="#{bundle.CreateEventsLabel_endDate}" for="endDate" styleClass="accioncrear" />
-                    <h:inputText id="endDate" value="#{eventsController.selected.endDate}" title="#{bundle.CreateEventsTitle_endDate}" required="true" requiredMessage="#{bundle.CreateEventsRequiredMessage_endDate}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEventsLabel_endDate}" for="endDate" styleClass="accioncrear" />                    
+                    <h:selectOneMenu id="endDate" value="#{eventsController.selected.endDate}" title="#{bundle.CreateEventsTitle_endDate}" required="true" requiredMessage="#{bundle.CreateEventsRequiredMessage_endDate}">
+                       <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                       <f:selectItem itemLabel="Selecciona una fecha y hora..." itemValue="" />
+                      
+                       <f:selectItem itemLabel="09/23/2023 13:30:00" itemValue="09/23/2023 13:30:00" />
+                       <f:selectItem itemLabel="09/23/2023 14:30:00" itemValue="09/23/2023 14:30:00" />
+                       <f:selectItem itemLabel="09/23/2023 15:30:00" itemValue="09/23/2023 15:30:00" />
+                       <f:selectItem itemLabel="09/23/2023 16:30:00" itemValue="09/23/2023 16:30:00" />
+                       <f:selectItem itemLabel="09/23/2023 17:30:00" itemValue="09/23/2023 17:30:00" />
+                       <f:selectItem itemLabel="09/24/2023 12:30:00" itemValue="09/24/2023 12:30:00" />
+                       <f:selectItem itemLabel="09/24/2023 13:30:00" itemValue="09/24/2023 13:30:00" />
+                       <f:selectItem itemLabel="09/24/2023 14:30:00" itemValue="09/24/2023 14:30:00" />
+                       <f:selectItem itemLabel="09/24/2023 15:30:00" itemValue="09/24/2023 15:30:00" />
+                       <f:selectItem itemLabel="09/24/2023 16:30:00" itemValue="09/24/2023 16:30:00" />
+                       <f:selectItem itemLabel="09/24/2023 17:30:00" itemValue="09/24/2023 17:30:00" />
+                       <f:selectItem itemLabel="09/25/2023 12:30:00" itemValue="09/25/2023 12:30:00" />
+                       <f:selectItem itemLabel="09/25/2023 13:30:00" itemValue="09/25/2023 13:30:00" />
+                       <f:selectItem itemLabel="09/25/2023 14:30:00" itemValue="09/25/2023 14:30:00" />
+                       <f:selectItem itemLabel="09/25/2023 15:30:00" itemValue="09/25/2023 15:30:00" />
+                       <f:selectItem itemLabel="09/25/2023 16:30:00" itemValue="09/25/2023 16:30:00" />
+                       <f:selectItem itemLabel="09/25/2023 17:30:00" itemValue="09/25/2023 17:30:00" />
 
-                   
+                    </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{eventsController.create}" value="#{bundle.CreateEventsSaveLink}" />
+                <h:commandLink action="#{eventsController.create}" value="#{bundle.CreateEventsSaveLink}" styleClass="accionbajo" />
                 <br />
                 <br />
-                <h:commandLink action="#{eventsController.prepareList}" value="#{bundle.CreateEventsShowAllLink}" immediate="true"/>
+                <h:commandLink action="#{eventsController.prepareList}" value="#{bundle.CreateEventsShowAllLink}" immediate="true" styleClass="accionbajo"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateEventsIndexLink}"/>
+                <h:link outcome="/index" value="#{bundle.CreateEventsIndexLink}" styleClass="accionbajo" />
             </h:form>
         </ui:define>
     </ui:composition>

@@ -40,7 +40,7 @@
                                 <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                             </h:outputText>
                         </h:column>
-                        <h:column>
+                      <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEventsTitle_endDate}"/>
                             </f:facet>
@@ -57,7 +57,7 @@
                             <h:outputText value=" "/>
                             <h:commandLink action="#{eventsController.prepareEdit}" value="#{bundle.ListEventsEditLink}" styleClass="accion" />
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{eventsController.destroy}" value="#{bundle.ListEventsDestroyLink}" styleClass="accion" />
+                            <h:commandLink  value="#{bundle.ListEventsDestroyLink}" styleClass="accion" />
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>

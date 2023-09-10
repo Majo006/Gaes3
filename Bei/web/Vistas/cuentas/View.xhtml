@@ -15,22 +15,15 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewCuentasLabel_id}"/>
+                    <h:outputText value="#{bundle.ViewCuentasLabel_id}" styleClass="accioncrear" />
                     <h:outputText value="#{cuentasController.selected.id}" title="#{bundle.ViewCuentasTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewCuentasLabel_nombre}"/>
+                    <h:outputText value="#{bundle.ViewCuentasLabel_nombre}" styleClass="accioncrear" />
                     <h:outputText value="#{cuentasController.selected.nombre}" title="#{bundle.ViewCuentasTitle_nombre}"/>
-                    <h:outputText value="#{bundle.ViewCuentasLabel_email}"/>
+                    <h:outputText value="#{bundle.ViewCuentasLabel_email}" styleClass="accioncrear" />
                     <h:outputText value="#{cuentasController.selected.email}" title="#{bundle.ViewCuentasTitle_email}"/>
-                    <h:outputText value="#{bundle.ViewCuentasLabel_permiso}"/>
+                    <h:outputText value="#{bundle.ViewCuentasLabel_permiso}" styleClass="accioncrear"/>
                     <h:outputText value="#{cuentasController.selected.permiso}" title="#{bundle.ViewCuentasTitle_permiso}"/>
-                    <h:outputText value="#{bundle.ViewCuentasLabel_createdAt}"/>
-                    <h:outputText value="#{cuentasController.selected.createdAt}" title="#{bundle.ViewCuentasTitle_createdAt}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:outputText>
-                    <h:outputText value="#{bundle.ViewCuentasLabel_updatedAt}"/>
-                    <h:outputText value="#{cuentasController.selected.updatedAt}" title="#{bundle.ViewCuentasTitle_updatedAt}">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:outputText>
+    
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{cuentasController.destroyAndView}" value="#{bundle.ViewCuentasDestroyLink}"/>
