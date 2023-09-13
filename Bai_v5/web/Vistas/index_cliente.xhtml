@@ -35,11 +35,15 @@
 
         <div class="ci">CITAS</div>
         
-        <div class="hi">HISTORIAL</div>
+        <div class="hi">
+            <h:link outcome= "/Vistas/404.xhtml" >HISTORIAL</h:link> 
+        </div>
         <div class="regis"> 
             <h:link outcome= "/index.xhtml" >Cerrar Sesión</h:link>
         </div>
-        
+        <div >
+        <h:link outcome= "/Vistas/dashboard.xhtml"><img class="dash" src="img/administrador.png"/></h:link>
+        </div>
     </header>
 
     <img src="img/FondoSa.png" alt="" class="imagen-fondo" />
@@ -74,14 +78,20 @@
     <div class="cuadradito"></div>
 
     <div class="imagenes">
-        <img src="img/descarga.jpeg" alt="" class="cabello" />
-        <img src="img/depilar.jpeg" alt="" class="depilacion" />
-        <img src="img/6 Servicios de grooming y belleza a domicilio.jpeg" alt="" class="manicure" />
+       <h:link outcome= "/Vistas/500.xhtml" > <img src="img/descarga.jpeg" alt="" class="cabello" /></h:link>
+       <h:link outcome= "/Vistas/500.xhtml" > <img src="img/depilar.jpeg" alt="" class="depilacion" /></h:link>
+       <h:link outcome= "/Vistas/500.xhtml" > <img src="img/6 Servicios de grooming y belleza a domicilio.jpeg" alt="" class="manicure" /></h:link>
     </div>
 
-    <div class="cab">CABELLO</div>
-    <div class="dep">DEPILACION</div>
-    <div class="man">MANICURE</div>
+    <div class="cab">
+        <h:link outcome= "/Vistas/500.xhtml" >CABELLO</h:link> 
+    </div>
+    <div class="dep">
+        <h:link outcome= "/Vistas/500.xhtml" >DEPILACION</h:link>
+    </div>
+    <div class="man">
+       <h:link outcome= "/Vistas/500.xhtml" >MANICURE</h:link> 
+    </div>
 
     <div id="servicio" class="desc">SERVICIOS</div>
     
