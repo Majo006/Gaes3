@@ -11,4 +11,5 @@
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="java:app/jndi/jdbc" object-type="user" pool-name="mysql_bai_rootPool"/>
+    <jdbc-resource enabled="true" jndi-name="java:app/LoginC" object-type="user" pool-name="mysql_bai_rootPool"/>
 </resources>

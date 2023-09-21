@@ -7,6 +7,7 @@ package controller;
 
 import dao.CuentasDao;
 import entity.Cuentas;
+import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.SessionScoped;
 
@@ -14,32 +15,33 @@ import javax.faces.bean.SessionScoped;
  *
  * @author mariSa
  */
-@ManageBean(name="cuentas")
+@ManagedBean (name = "cuentas")
 @SessionScoped
+
 public class cuentasController {
-    private String nombre;
+    private String email;
     private String login;
-    private String password;
+    private String contraseña;
     
-    public String validaLogin()
-    {
-        CuentasDao CUENTAS= new CuentasDao();
-        Cuentas c = CUENTAS.validarCuenta(login, password);
-        if(c!=null)
-        {
-         nombre = c.getNombre();
-         return "index_cliente";         
+    public String validaLogin() throws Exception {
+        CuentasDao CUENTAS = new CuentasDao();
+        Cuentas c = CUENTAS.validarCuenta(email, contraseña);
+        if (c != null) {
+            email = c.getEmail();
+            return "../Vista/index_cliente.xhtml";
+            
+        } else {
+            return "../login.xhtml";
         }
-        else
-            return "login";
     }
 
-    public String getNombre() {
-        return nombre;
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getLogin() {
@@ -50,12 +52,12 @@ public class cuentasController {
         this.login = login;
     }
 
-    public String getPassword() {
-        return password;
+    public String getContraseña() {
+        return contraseña;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
     
     

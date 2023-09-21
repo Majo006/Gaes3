@@ -30,7 +30,7 @@
                     <h:outputLabel value="#{bundle.CreateCuentasLabel_email}" for="email" styleClass="titulos" />
                     <h:inputText id="email" value="#{cuentasController.selected.email}" title="#{bundle.CreateCuentasTitle_email}" required="true" requiredMessage="#{bundle.CreateCuentasRequiredMessage_email}"/>
                     <h:outputLabel value="Crear Contraseña" for="contraseña" styleClass="titulos" />
-                    <h:inputText id="contraseña" value="#{cuentasController.selected.contraseña}" title="#{bundle.CreateCuentasTitle_contraseña}" />
+                    <h:inputSecret id="contraseña" value="#{cuentasController.selected.contraseña}" title="#{bundle.CreateCuentasTitle_contraseña}" />
                     <h:outputLabel value="Tratamientos pasados" styleClass="titulos" />
                     <h:inputText size="20" title="Tratamiento pasado"/>
                 </h:panelGrid>

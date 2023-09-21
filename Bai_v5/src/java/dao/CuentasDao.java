@@ -6,38 +6,41 @@
 package dao;
 
 import entity.Cuentas;
+import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.persistence.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-/**
- *
- * @author maria
- */
 public class CuentasDao {
     private final EntityManagerFactory emf;
 
-    public CuentasDao(EntityManagerFactory emf) {
+    public CuentasDao() {
         this.emf = Persistence.createEntityManagerFactory("Bai_v5PU");
     }
-
-    public CuentasDao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
-    public Cuentas validarCuenta(String usuario, String password)
-    {
-        Cuentas cuentas;
-        EntityManager em= emf.createEntityManager();
-        String sql="SELECT c FROM Cuentas c WHERE c.cuentas=: cuentas AND c.contrase\u00f1a = :contrase\u00f1a";
-        Query query = em.createNamedQuery(sql);
-        query.setParameter("usuario", usuario);
-        query.setParameter("password", password);
+    public Cuentas validarCuenta(String email, String contraseña) {
+        EntityManager em = emf.createEntityManager();
         
-        cuentas = (Cuentas)query.getSingleResult();
-       
-        return cuentas;
-    }
-    
+        try {
+            String sql = "SELECT c FROM Cuentas c WHERE c.email = :email AND c.contraseña = :contraseña";
+            Query query = em.createQuery(sql);
+            query.setParameter("email", email);
+            query.setParameter("contraseña", contraseña);
+            
+            List<Cuentas> results = query.getResultList();
+            if (results != null && !results.isEmpty()) {
+                return results.get(0);
+            } else {
+                FacesMessage message = new FacesMessage("Usuario no registrado");
+                FacesContext.getCurrentInstance().addMessage(null, message);
+                return null;
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Error al validar el usuario.", e);
+        }
+ 
+}
 }
