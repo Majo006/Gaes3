@@ -24,12 +24,12 @@ and open the template in the editor.
                 <p:inputText id="cuentas" value="#{CuentasController.correoElectronico}" size="20" required="true" requiredMessage="Este campo es obligatorio" />
                 <p:message for="cuentas" display="icon" />
                 
-                <p:outputLabel for="contraseña">Contraseña:</p:outputLabel>
-                <p:password id="contraseña" value="#{CuentasController.contraseñaUsuario}" size="10" required="true" requiredMessage="Este campo es obligatorio" />
-                <p:message for="contraseña" display="icon" />
+                <p:outputLabel for="claveUsuario">Contraseña:</p:outputLabel>
+                <p:password id="claveUsuario" value="#{cuentasController.claveUsuario}" size="10" required="true" requiredMessage="Este campo es obligatorio" />
+                <p:message for="claveUsuario" display="icon" />
             </p:panelGrid>
             
-            <p:commandButton value="Ingresar" action="#{CuentasController.validaLogin()}" update="@form" />
+            <p:commandButton value="Ingresar" action="#{cuentasController.validaLogin()}" ajax="false" />
         </h:form>
          
 

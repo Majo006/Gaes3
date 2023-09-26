@@ -21,7 +21,6 @@ import javax.faces.model.SelectItem;
 import javax.servlet.http.HttpSession;
 import static jpa.entities.Cuentas_.nombre;
 
-
 @Named("cuentasController")
 @SessionScoped
 public class CuentasController implements Serializable {
@@ -32,39 +31,100 @@ public class CuentasController implements Serializable {
     private bai.CuentasFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
-    
+
     private String correoElectronico;
     private String claveUsuario;
     private String confirmarcionClave;
     private String nombreCompleto;
     private String nombreUsuario;
-    private String rolUsuario;
-    private boolean confirmacionPermiso;
-
+    private short permisoUsuario;
+    private long idUsuario = 2;
+    private short permiso3 = 3;
     
-   Cuentas nuevaCuenta = new Cuentas();
+    public String registrarUsuario() {
+        if (nombreCompleto.isEmpty()) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Todos los campos son obligatorios."));
+            return "registro";
+        }
 
+        if (!claveUsuario.equals(confirmarcionClave)) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("La contraseña y la confirmación de la contraseña no coinciden."));
+            return "registro";
+        }
+
+        Cuentas nuevaCuenta = new Cuentas();
+
+        nuevaCuenta.setNombre(nombreCompleto);
+        nuevaCuenta.setEmail(correoElectronico);
+        nuevaCuenta.setContraseña(claveUsuario);
+        nuevaCuenta.setId(idUsuario);
+        nuevaCuenta.setPermiso(permiso3);
+
+        if (ejbFacade.registrarUsuario(nuevaCuenta)) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Usuario registrado exitosamente"));
+            nombreCompleto = "";
+            correoElectronico = "";
+            claveUsuario = "";
+            confirmarcionClave = "";
+        } else {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Error al registrar usuario"));
+        }
+        return "login?faces-redirect=true";
+    }
 
     public String validaLogin() {
         Cuentas cuenta = ejbFacade.validarUsuario(correoElectronico, claveUsuario);
         if (cuenta != null) {
             nombreUsuario = cuenta.getNombre();
-            return "index_cliente";
+            permisoUsuario = cuenta.getPermiso();
+            if (1 == permisoUsuario || 2 == permisoUsuario) {
+                return "/Vistas/dashboard?faces-redirect=true";
+            } else if (3 == permisoUsuario) {
+                return "index?faces-redirect=true";
+            } else {
+                return "/Vistas/404?faces-redirect=true";
+            }
         } else {
-            return "login";
+            return "login?faces-redirect=true";
         }
     }
 
     public String logout() {
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-
         if (session != null) {
             session.invalidate();
         }
-
         return "login?faces-redirect=true";
     }
-        
+
+    public boolean isLoggedIn() {
+        return nombreUsuario != null && !nombreUsuario.isEmpty();
+    }
+    
+    public boolean isCliente() {
+        return isLoggedIn() && 3 == permisoUsuario;
+    }
+
+    public boolean isVendedor() {
+        return isLoggedIn() && 2 == permisoUsuario;
+    }
+
+    public boolean isAdministrador() {
+        return isLoggedIn() && 1 == permisoUsuario;
+    }
+
+    public boolean isNone() {
+        return !isLoggedIn() || (!(3 == permisoUsuario) && !(2 == permisoUsuario) && !(1 == permisoUsuario));
+    }
+
+    public short getPermisoUsuario() {
+        return permisoUsuario;
+    }
+
+    public void setPermisoUsuario(short permisoUsuario) {
+        this.permisoUsuario = permisoUsuario;
+    }
+
     public String getCorreoElectronico() {
         return correoElectronico;
     }
@@ -105,25 +165,6 @@ public class CuentasController implements Serializable {
         this.nombreUsuario = nombreUsuario;
     }
 
-    public String getRolUsuario() {
-        return rolUsuario;
-    }
-
-    public void setRolUsuario(String rolUsuario) {
-        this.rolUsuario = rolUsuario;
-    }
-
-    public boolean isConfirmacionPermiso() {
-        return confirmacionPermiso;
-    }
-
-    public void setConfirmacionPermiso(boolean confirmacionPermiso) {
-        this.confirmacionPermiso = confirmacionPermiso;
-    }
-
-    
-
- 
     public CuentasController() {
     }
 
@@ -326,6 +367,5 @@ public class CuentasController implements Serializable {
         }
 
     }
-    
 
 }
