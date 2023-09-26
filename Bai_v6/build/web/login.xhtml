@@ -20,9 +20,9 @@ and open the template in the editor.
         <img src="img/Logo1.png" alt="" class="imagen-logo" />
         <h:form id="logaso">
             <p:panelGrid id="grid" columns="3">
-                <p:outputLabel for="cuentas">Usuario:</p:outputLabel>
-                <p:inputText id="cuentas" value="#{CuentasController.correoElectronico}" size="20" required="true" requiredMessage="Este campo es obligatorio" />
-                <p:message for="cuentas" display="icon" />
+                <p:outputLabel for="correoElectronico">Usuario:</p:outputLabel>
+                <p:inputText id="correoElectronico" value="#{cuentasController.correoElectronico}" size="20" required="true" requiredMessage="Este campo es obligatorio" />
+                <p:message for="correoElectronico" display="icon" />
                 
                 <p:outputLabel for="claveUsuario">Contraseña:</p:outputLabel>
                 <p:password id="claveUsuario" value="#{cuentasController.claveUsuario}" size="10" required="true" requiredMessage="Este campo es obligatorio" />
