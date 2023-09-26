@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -17,6 +18,9 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import javax.servlet.http.HttpSession;
+import static jpa.entities.Cuentas_.nombre;
+
 
 @Named("cuentasController")
 @SessionScoped
@@ -28,7 +32,98 @@ public class CuentasController implements Serializable {
     private bai.CuentasFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    
+    private String correoElectronico;
+    private String claveUsuario;
+    private String confirmarcionClave;
+    private String nombreCompleto;
+    private String nombreUsuario;
+    private String rolUsuario;
+    private boolean confirmacionPermiso;
 
+    
+   Cuentas nuevaCuenta = new Cuentas();
+
+
+    public String validaLogin() {
+        Cuentas cuenta = ejbFacade.validarUsuario(correoElectronico, claveUsuario);
+        if (cuenta != null) {
+            nombreUsuario = cuenta.getNombre();
+            return "index_cliente";
+        } else {
+            return "login";
+        }
+    }
+
+    public String logout() {
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+
+        if (session != null) {
+            session.invalidate();
+        }
+
+        return "login?faces-redirect=true";
+    }
+        
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    public String getClaveUsuario() {
+        return claveUsuario;
+    }
+
+    public void setClaveUsuario(String claveUsuario) {
+        this.claveUsuario = claveUsuario;
+    }
+
+    public String getConfirmarcionClave() {
+        return confirmarcionClave;
+    }
+
+    public void setConfirmarcionClave(String confirmarcionClave) {
+        this.confirmarcionClave = confirmarcionClave;
+    }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getRolUsuario() {
+        return rolUsuario;
+    }
+
+    public void setRolUsuario(String rolUsuario) {
+        this.rolUsuario = rolUsuario;
+    }
+
+    public boolean isConfirmacionPermiso() {
+        return confirmacionPermiso;
+    }
+
+    public void setConfirmacionPermiso(boolean confirmacionPermiso) {
+        this.confirmacionPermiso = confirmacionPermiso;
+    }
+
+    
+
+ 
     public CuentasController() {
     }
 
@@ -231,5 +326,6 @@ public class CuentasController implements Serializable {
         }
 
     }
+    
 
 }

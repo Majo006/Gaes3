@@ -277,7 +277,7 @@ header.woo{
     background: #fff;
     position: absolute;
     top: 30px;
-    left: 800px;
+    left: 895px;
     
 }
 .ci a{
@@ -305,6 +305,25 @@ header.woo{
 .regis a{
     text-decoration: none;
 }
+.cerrar{
+            top: -200px;
+    height: 40px;
+    width: 50px;
+    border-radius: 20px;
+    position: relative;
+    position: relative;
+        font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: -10px -20px;
+    border: 2px solid #C0FEEA;
+    border-radius: 10px;
+    background: #fff;
+    position: absolute;
+    top: 35px;
+    left: 1250px;
+}
 .dash{
         top: -200px;
     height: 40px;
@@ -324,7 +343,7 @@ header.woo{
     background: #fff;
     position: absolute;
     top: 35px;
-    left: 300px;
+    left: 400px;
     height: -2500px;
     
     
@@ -345,7 +364,7 @@ header.woo{
     background: #fff;
     position: absolute;
     top: 30px;
-    left: 920px;
+    left: 1100px;
 }
 .hi a{
     text-decoration: none;
@@ -378,7 +397,7 @@ header.woo{
     background: #fff;
     position: absolute;
     top: 30px;
-    left: 370px;
+    left: 465px;
 }
 .infos a{
     text-decoration: none;
@@ -394,7 +413,7 @@ header.woo{
     background: #fff;
     position: absolute;
     top: 30px;
-    left: 530px;
+    left: 625px;
 }
 .info3 a{
     text-decoration: none;

@@ -5,9 +5,12 @@
  */
 package bai;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import jpa.entities.Cuentas;
 
 /**
@@ -28,5 +31,34 @@ public class CuentasFacade extends AbstractFacade<Cuentas> {
     public CuentasFacade() {
         super(Cuentas.class);
     }
-    
+ 
+     public Cuentas validarUsuario(String correoElectronico, String contraseñaUsuario) {
+        try {
+            Query query = em.createQuery("SELECT c FROM Cuentas c WHERE c.email = :correoElectronico AND c.contraseña = :contraseñaUsuario");
+            query.setParameter("correoElectronico", correoElectronico);
+            query.setParameter("contraseñaUsuario", contraseñaUsuario);
+
+            List<Cuentas> results = query.getResultList();
+            if (results != null && !results.isEmpty()) {
+                return results.get(0);
+            } else {
+                return null;
+            }
+        } catch (NoResultException e) {
+            return null;
+        } catch (Exception e) {
+            throw new RuntimeException("Error al validar el usuario.", e);
+        }
+    }
+
+    public boolean registrarUsuario(Cuentas nuevaCuenta) {
+        try {
+            em.persist(nuevaCuenta);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

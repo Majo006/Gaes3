@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Cuentas.findByPermiso", query = "SELECT c FROM Cuentas c WHERE c.permiso = :permiso")
     , @NamedQuery(name = "Cuentas.findByCreatedAt", query = "SELECT c FROM Cuentas c WHERE c.createdAt = :createdAt")
     , @NamedQuery(name = "Cuentas.findByUpdatedAt", query = "SELECT c FROM Cuentas c WHERE c.updatedAt = :updatedAt")
-    , @NamedQuery(name = "Cuentas.findByContrase\u00f1a", query = "SELECT c FROM Cuentas c WHERE c.contrase\u00f1a = :contrase\u00f1a")})
+    , @NamedQuery(name = "Cuentas.findByContrase\u00f1a", query = "SELECT c FROM Cuentas c WHERE c.contraseña = :contraseña")})
 public class Cuentas implements Serializable {
 
     private static final long serialVersionUID = 1L;
