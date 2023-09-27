@@ -94,7 +94,7 @@ public class CuentasController implements Serializable {
         if (session != null) {
             session.invalidate();
         }
-        return "login?faces-redirect=true";
+        return "index?faces-redirect=true";
     }
 
     public boolean isLoggedIn() {

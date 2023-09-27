@@ -45,6 +45,13 @@
             <h3>La Belleza es Poder</h3>
             <p>Porque Sentirse Bella te Hace Poderoza</p>
             <img src="img/Logo1.png" alt="Imagen Logo"/>
+                        <div> 
+
+                <h:form class="cerrar">
+                    <p:commandButton class="login logout" value="Cerrar Sesión" action="#{cuentasController.logout}" rendered="#{cuentasController.isLoggedIn()}" ajax="false" />
+                </h:form>
+
+            </div>
         </h:panelGroup>
 
         <h:panelGroup rendered="#{not cuentasController.isVendedor() and not cuentasController.isAdministrador() and cuentasController.isLoggedIn()}">

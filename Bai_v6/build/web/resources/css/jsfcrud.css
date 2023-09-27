@@ -313,17 +313,41 @@ header.woo{
     position: relative;
     position: relative;
         font-family: 'Bebas Neue', sans-serif;
-    font-size: 25px;
+    font-size: 12px;
     font-weight: bold;
     text-decoration: none;
     padding: -10px -20px;
-    border: 2px solid #C0FEEA;
-    border-radius: 10px;
-    background: #fff;
+
+  
     position: absolute;
     top: 35px;
     left: 1250px;
 }
+
+
+#logaso{
+    margin: 200px auto 0;
+    width: 30%;
+    
+    background-color: #75CFB8;
+    padding-top: 100px;
+    margin-top: 200px;
+    padding-left: -8100px;
+
+    
+    height: 300px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
 .dash{
         top: -200px;
     height: 40px;
