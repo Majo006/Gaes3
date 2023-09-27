@@ -33,9 +33,7 @@
                 <img src="img/archivos.png" alt="Imagen Seguimientos" class="imagen-seguimientos" />
 
                 <h:link outcome="/Vistas/seguimientos/List" value="Seguimientos"/>
-                <br />
-                <img src="img/administrador.png" alt="Imagen Usuarios" class="imagen-usuarios" />
-                <h:link outcome="/Vistas/users/List" value="Usuarios"/>
+
 
             </sidebar>
 
@@ -57,12 +55,14 @@
         <h:panelGroup rendered="#{not cuentasController.isVendedor() and not cuentasController.isAdministrador() and cuentasController.isLoggedIn()}">
             <div class="error-bodycont">
                 <div class="container">
-                    <div class="error">
+                        <div class="error-page-wrap">
+                            <article class="error-page gradient">
                         <h1>5</h1>
                         <h2>error</h2>
                         <p>Acceso Denegado <br /> ¡No tienes el permiso para acceder a esta página!</p>
-                        <h:link class="bubbly-button" outcome="/index" value="Volver al Inicio"/>
-                    </div>
+                        <h:link class="bubbly-button" outcome="/index" value="Volver al Inicio" styleClass="accionbajo"/>
+                            </article>
+                        </div>
                 </div>
             </div>
         </h:panelGroup>

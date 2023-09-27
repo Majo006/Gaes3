@@ -327,9 +327,9 @@ header.woo{
 
 #logaso{
     margin: 200px auto 0;
-    width: 30%;
-    
+    width: 60%;
     background-color: #75CFB8;
+
     padding-top: 100px;
     margin-top: 200px;
     padding-left: -8100px;
@@ -337,8 +337,19 @@ header.woo{
     
     height: 300px;
 
-    justify-content: center;
-    align-items: center;
+
+     z-index: 1;
+     
+
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #C0FEEA;
+    border-radius: 20px;
+    background: #fff;
+    position: absolute;
+    top: -30px;
+    left: 300px;
 }
 
 
@@ -715,7 +726,7 @@ header.woo{
 }
 
 .bodyregistro{
-    background-color: #FFD495;
+    background-color: white;
 }
 
 /* Estilos para el contenedor principal */
@@ -728,9 +739,9 @@ header.woo{
     border: 2px solid #C0FEEA;
     border-radius: 10px;
     position: absolute;
-    top: 30px;
+    top: 40px;
     left: 1100px;
-    top: 85px;
+    top: 105px;
     background-color: #75CFB8;
     font-size: 16px;
     display: flex;

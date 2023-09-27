@@ -13,13 +13,13 @@ and open the template in the editor.
     <title>Olga look Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />             
     <title><ui:insert name="title">Login</ui:insert></title>
-
     <link href="resources/css/jsfcrud.css" rel="stylesheet" type="text/css"/>
+ 
    </h:head>
-    <body  id="fondo">
+    <body>
         
                 <header>
-            <img src="img/Logo1.png" alt="" class="imagen-logo" />
+                    <h:link outcome="index"> <img src="img/Logo1.png" alt="" class="imagen-logo" /></h:link>
 
             <div class="icon-menu">
                 <a href="#" class="enlace-con-icono">
@@ -32,10 +32,14 @@ and open the template in the editor.
                     <i class="fa-solid fa-user"></i>
                 </a>
             </div>
+              <div class="regis"> 
+                    <h:link outcome= "/Registro.xhtml" >Registrarse</h:link>
+                </div>
 
         </header>
         
         <img src="img/Logo1.png" alt="" class="imagen-logo" />
+         <img src="img/FondoSa.png" alt="" class="imagen-fondo" />
         <h:form id="logaso">
             <p:panelGrid id="grid" columns="3">
                 <p:outputLabel for="correoElectronico">Usuario:</p:outputLabel>
@@ -50,7 +54,10 @@ and open the template in the editor.
             <p:commandButton value="Ingresar" action="#{cuentasController.validaLogin()}" ajax="false" />
 
         </h:form>
-         
+        
+          <footer pie="">
+            Derechos Reservados a Olga Look - Desde 2007
+        </footer>    
 
     </body>
 </html>

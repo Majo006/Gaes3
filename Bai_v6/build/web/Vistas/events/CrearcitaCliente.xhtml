@@ -7,7 +7,7 @@
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <title><ui:insert name="title">Agendar Cita</ui:insert></title>
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
     </h:head>
 
@@ -48,11 +48,7 @@
                         <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         <f:selectItem itemLabel="Selecciona una fecha y hora..." itemValue="" />
 
-                        <f:selectItem itemLabel="10/10/2023 13:00:00" itemValue="10/10/2023 13:00:00" />
-                        <f:selectItem itemLabel="10/10/2023 14:00:00" itemValue="10/10/2023 14:00:00" />
-                        <f:selectItem itemLabel="10/10/2023 15:00:00" itemValue="10/10/2023 15:00:00" />
                         <f:selectItem itemLabel="10/10/2023 16:00:00" itemValue="10/10/2023 16:00:00" />
-                        <f:selectItem itemLabel="10/10/2023 17:00:00" itemValue="10/10/2023 17:00:00" />
                         <f:selectItem itemLabel="10/11/2023 12:00:00" itemValue="10/11/2023 12:00:00" />
                         <f:selectItem itemLabel="10/11/2023 13:00:00" itemValue="10/11/2023 13:00:00" />
                         <f:selectItem itemLabel="10/11/2023 14:00:00" itemValue="10/11/2023 14:00:00" />
@@ -80,11 +76,7 @@
                         <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         <f:selectItem itemLabel="Selecciona una fecha y hora..." itemValue="" />
 
-                        <f:selectItem itemLabel="10/10/2023 13:30:00" itemValue="10/10/2023 13:30:00" />
-                        <f:selectItem itemLabel="10/10/2023 14:30:00" itemValue="10/10/2023 14:30:00" />
-                        <f:selectItem itemLabel="10/10/2023 15:30:00" itemValue="10/10/2023 15:30:00" />
                         <f:selectItem itemLabel="10/10/2023 16:30:00" itemValue="10/10/2023 16:30:00" />
-                        <f:selectItem itemLabel="10/10/2023 17:30:00" itemValue="10/10/2023 17:30:00" />
                         <f:selectItem itemLabel="10/11/2023 12:30:00" itemValue="10/11/2023 12:30:00" />
                         <f:selectItem itemLabel="10/11/2023 13:30:00" itemValue="10/11/2023 13:30:00" />
                         <f:selectItem itemLabel="10/11/2023 14:30:00" itemValue="10/11/2023 14:30:00" />
@@ -112,9 +104,6 @@
             </h:panelGroup>
                 <br />
                 <h:commandLink action="#{eventsController.create}" value="#{bundle.CreateEventsSaveLink}" styleClass="accionbajo" />
-                <br />
-                <br />
-
                 <br />
                 <br />
                 <h:link outcome="/index" value="#{bundle.CreateEventsIndexLink}" styleClass="accionbajo" />
